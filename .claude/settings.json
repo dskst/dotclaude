@@ -2,8 +2,14 @@
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
-  "teammateMode": "tmux",
+  "permissions": {
+    "deny": [
+      "Bash(git push --force *)",
+      "Bash(rm -rf *)"
+    ]
+  },
   "enabledPlugins": {
     "document-skills@anthropic-agent-skills": true
-  }
+  },
+  "teammateMode": "tmux"
 }
