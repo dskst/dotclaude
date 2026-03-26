@@ -20,7 +20,7 @@ make install
 `make install` does the following:
 
 1. Merges `settings.json` into `~/.claude/settings.json` (backs up existing file if present)
-2. Symlinks `CLAUDE.md`, `skills/`, and `agents/` into `~/.claude/` (backs up existing files if present)
+2. Symlinks `CLAUDE.md`, `skills/`, `agents/`, and `commands/` into `~/.claude/` (backs up existing files if present)
 
 ## Uninstall
 
@@ -38,6 +38,7 @@ Removes symlinks and restores backups if they exist. `settings.json` is also res
 ├── settings.json                      # Shared settings (permissions, env vars, plugins)
 ├── settings.local.json                # Local-only settings (not intended for sharing)
 ├── agents/                            # Custom sub-agent definitions
+├── commands/                          # Custom slash command definitions
 └── skills/                            # Custom skill definitions
 ```
 
@@ -55,6 +56,10 @@ Removes symlinks and restores backups if they exist. `settings.json` is also res
 ### Adding an agent
 
 Add a Markdown file to `.claude/agents/`. Define `name`, `description`, `model`, `color`, etc. in the YAML frontmatter, and write the system prompt in the body.
+
+### Adding a command
+
+Add a Markdown file to `.claude/commands/`. The file name becomes the slash command name (e.g., `suggest.md` → `/suggest`). Write the prompt template in the body; use `$ARGUMENTS` to capture user input.
 
 ### Adding a skill
 

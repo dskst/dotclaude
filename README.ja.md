@@ -20,7 +20,7 @@ make install
 `make install` は以下を実行する：
 
 1. `settings.json` を `~/.claude/settings.json` にマージする（既存ファイルがあればバックアップを作成）
-2. `CLAUDE.md`、`skills/`、`agents/` を `~/.claude/` 配下にシンボリックリンクする（既存ファイルがあればバックアップを作成）
+2. `CLAUDE.md`、`skills/`、`agents/`、`commands/` を `~/.claude/` 配下にシンボリックリンクする（既存ファイルがあればバックアップを作成）
 
 ## アンインストール
 
@@ -38,6 +38,7 @@ make uninstall
 ├── settings.json                      # 共有設定（権限、環境変数、プラグイン）
 ├── settings.local.json                # ローカル専用設定（git管理外用途）
 ├── agents/                            # カスタムサブエージェント定義
+├── commands/                          # カスタムスラッシュコマンド定義
 └── skills/                            # カスタムスキル定義
 ```
 
@@ -55,6 +56,10 @@ make uninstall
 ### エージェントの追加
 
 `.claude/agents/` に Markdown ファイルを追加する。YAML frontmatter で `name`、`description`、`model`、`color` 等を定義し、本文にシステムプロンプトを記述する。
+
+### コマンドの追加
+
+`.claude/commands/` に Markdown ファイルを追加する。ファイル名がスラッシュコマンド名になる（例: `suggest.md` → `/suggest`）。本文にプロンプトテンプレートを記述し、`$ARGUMENTS` でユーザー入力を受け取る。
 
 ### スキルの追加
 
