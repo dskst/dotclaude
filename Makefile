@@ -1,7 +1,7 @@
 DOTCLAUDE_DIR := $(abspath .claude)
 TARGET_DIR := $(HOME)/.claude
 
-TARGETS := CLAUDE.md skills agents
+TARGETS := CLAUDE.md skills agents commands
 
 .PHONY: install uninstall merge-settings
 
