@@ -1,7 +1,7 @@
 DOTCLAUDE_DIR := $(abspath .claude)
 TARGET_DIR := $(HOME)/.claude
 
-TARGETS := CLAUDE.md skills agents commands
+TARGETS := CLAUDE.md skills agents commands statusline.py
 
 .PHONY: install uninstall merge-settings
 

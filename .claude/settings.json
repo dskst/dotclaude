@@ -15,5 +15,9 @@
   "enabledPlugins": {
     "document-skills@anthropic-agent-skills": true
   },
-  "teammateMode": "tmux"
+  "teammateMode": "tmux",
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.py"
+  }
 }
