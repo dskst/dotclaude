@@ -6,9 +6,6 @@
 .AppleDouble
 .LSOverride
 
-# Icon must end with two \r
-Icon
-
 # Thumbnails
 ._*
 
@@ -91,3 +88,11 @@ tags
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+# Test files (keep directory structure via .gitkeep)
+test/*
+!test/.gitkeep
+
+# Workspace (keep directory structure via .gitkeep)
+workspace/*
+!workspace/.gitkeep

@@ -12,6 +12,19 @@
       "Read(**/*.pem)"
     ]
   },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -q '\\.md\"'; then echo '[japanese-proofreader] .mdファイルが編集された。/japanese-proofreader スキルで校正を実行してください。'; fi"
+          }
+        ]
+      }
+    ]
+  },
   "enabledPlugins": {
     "document-skills@anthropic-agent-skills": true
   },
